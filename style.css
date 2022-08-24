@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline: 1px red solid; */
+}
+body {
+    font-family: "Arial", Helvetica, sans-serif;
+    font-size: 15pt;
+    position: relative;
+    /* height: 100vh; */
+    background-color: #08798c;
+}
+.modeContainer{
+    width: 100%;
+    padding: 20px ;
+    display: flex;
+    justify-content: flex-end;
+}
+.modeBox{
+    display: flex;
+    padding-right: 10px;
+    justify-content: center;
+    flex-direction: column;
+}
+.modeBox i {
+    font-size: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+.modeBox p{
+    padding: 2px;
+}
+
+/* -------cLOCK sECTION */
+.clockContainer{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-row: 1;
+    place-content: center;
+    gap: 30px;
+}
+.clock{
+    /* background: #f7f9f7; */
+    box-shadow: 0px 0px 20px #282d28;
+    color: #191414;
+    border-radius: 10px;
+}
+.clockContainer h1{
+    padding: 10px;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+}
+/* aNALOG cLOCK sECTION */
+.analogClock{
+    width: 400px;
+    position: relative;
+    display: flex;
+    justify-items: center;
+}
+.canvabg{
+    position: absolute;
+    /* top: 50%;
+    left: 50%; */
+    /* transform: translate(50%, 50%); */
+    width: 380px;
+    margin: 10px 10px;
+    height: 380px;
+    z-index: -2;
+    border-radius: 100%;
+    background-color: grey;
+}
+/* dIGITAL cLOCK sECTION */
+.digitalClock, .stopClock, .alarmClock{
+    width: 400px;
+    height: 400px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.clockBox{
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px #282d28;
+}
+h3{
+    border: 1px rgb(241, 239, 239) solid;
+    padding: 10px;
+}
+#time{
+    margin: auto 0;
+    font-size: 70px;
+    letter-spacing: 0.1rem;
+}
+#setFormat{
+    margin: 10px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+#timeFormat{
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 25px;
+    color: rgb(15, 83, 143);
+}
+#timeFormat option{
+    padding: 5px;
+}
+#timeFormat selected{
+    background-color: brown;
+}
+
+/* sTOP wATCH */
+.control{
+    margin: 20px 5px;
+    /* border: 1px red solid; */
+}
+.control button{
+    padding: 15px 30px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px wheat;
+    border-radius: 10px;
+}
+ #Stoptime {
+     margin: auto 0;
+     font-size: 50px;
+ }
+.result span{
+    color: white;
+}
+.start{
+    background-color: rgb(6, 226, 6);
+}
+.stop{
+    background-color: rgb(211, 8, 8);
+}
+.reset{
+    background-color: rgb(60, 7, 252);
+}
+
+
+/* aLARM cLOCK */
+.alarmClock .clockBox{
+    /* flex-direction: row; */
+    /* gap: 20px; */
+}
+#alarmtime {
+    margin: auto 0;
+    font-size: 40px;
+    /* font-weight: ; */
+    letter-spacing: 0.1rem;
+}
+.selectAm_Pm h3{
+    padding: 5px;
+    margin: 5px;
+}
+
+/* my trademark */
+#iamadev {
+    /* position: absolute; */
+    cursor: pointer;
+    width: 100%;
+    margin: 10px auto 0;
+    font-weight: bolder;
+    text-align: center;
+    bottom: 5%;
+}
+
+#iamadev a {
+    color: red;
+    text-decoration: none;
+}
+
+#iamadev p {
+    font-size: 20px;
+    padding: 5px;
+}
+#iamadev span {
+    color: blue;
+}

@@ -1,2 +1,2 @@
-# My-Clocks
-Differnt types of clocks
+# Analog-Clock
+This was made using HTML canvas and JavaScript.
