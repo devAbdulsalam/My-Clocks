@@ -221,68 +221,102 @@ resetButton.addEventListener('click', () => {
 let alarmTime = document.getElementById("alarmTime")
 let setAlarm = document.getElementById("setAlarm")
 let stopAlarm = document.getElementById("stopAlarm")
-const countdown = document.getElementById("alarmCounter");
-const message = document.getElementById("message")
-let getTime = function() {
-  let cTime = new Date();
-  let year = cTime.getFullYear();
-  let month = cTime.getMonth();
-  let day = cTime.getDay();
-  let setTime = `${year} ${month} ${day} ${alarmTime.value}`
-  startAlarm(setTime)
-}
-let startAlarm = function(setTime){
-  let deadline = new Date(`${setTime}`).getTime();
+let countdown = document.getElementById("alarmCounter");
+let soundAlert = document.getElementById("soundAlert")
+let cTime = new Date();
+let year = cTime.getFullYear();
+let month = cTime.getMonth();
+let day = cTime.getDate();
+let second = cTime.getSeconds();
+let setTime
+alarmTime.addEventListener('change', function(){
+let str = alarmTime.value
+let hours = Number(str.slice(0,2));
+let minutes = Number(str.slice(3,5));
+setTime = new Date(year, month, day, hours, minutes, second);
+let startAlarm = function(){
   var x = setInterval(function () {
-      var now = new Date().getTime();
-      var t = deadline - now;
-      console.log(t)
-      // console.log(currentTime)
-      // var days = Math.floor(t / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((t % (1000 * 60)) / 1000);
-      // document.getElementById("day").innerHTML = days;
-      console.log(`${hours}:${minutes}:${seconds}`)
-      countdown.innerHTML = `${hours}:${minutes}:${seconds}`;
+    let ringTime = new Date(setTime).getTime()
+    let now = new Date().getTime();
+    var t = ringTime - now;
+        // var days = Math.floor(t / (1000 * 60 * 60 * 24));
+        var hour = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minute = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((t % (1000 * 60)) / 1000);
+          // console.log(`${hours}:${minutes}:${seconds}`)
+          minute = checkTime(minute);
+          seconds = checkTime(seconds);
+          hour = checkTime(hour);
+        function checkTime(i) {
+            if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+            return i;
+          }
+          countdown.innerHTML = `${hour}:${minute}:${seconds}`;
       if (t < 0) {
         clearInterval(x);
-        message.innerHTML = "TIME UP";
-        countdown.innerHTML = `${hours = 00}:${minutes = 00}:${seconds = 00}`;
+        soundAlert.style.display = "flex"
+        playAudio()
+        // days = "00"
+        hours = "00"
+        minutes = "00"
+        seconds = "00"
+        countdown.innerHTML = `${hours}:${minutes}:${seconds}`;
       }
-  }, 1000); 
-}
-
-setAlarm.addEventListener('click', function(){
-  getTime()
-})
-    // console.log(currentTime)
-
-stopAlarm.addEventListener('click', () => {
-    countdown.innerHTML ="00:00:00"; 
-    console.log(alarmTime)
+    }, 1000);
+    alarmTime.addEventListener('change', function(){
+      clearInterval(x);
+    })
+    stopAlarm.addEventListener('click', () => {
+      countdown.innerHTML = "00:00:00";
+      soundAlert.style.display = "none"
+      alarmTime.value = ""
+      clearInterval(x);
+      console.log("alarm stoped")
+    })
+  }
+  setAlarm.addEventListener('click', function(){
+    startAlarm()
   })
-// const startingPoint = 16;
-
-// let time = startingPoint * 60;
-
-// const countdown = document.getElementById("alarmCounter");
-
-// setInterval(updateCounter, 1000);
-
-// function updateCounter() {
-
-//     let hours = 00
-//     const minutes = Math.floor(time / 60);
-//     let seconds = time % 60;
-
-//     seconds = seconds < 10 ? '0' + seconds : seconds;
-
-//     countdown.innerHTML = `${hours}:${minutes}:${seconds}`;
-//     time !== 0 ? time-- : time;    
-
-// }
-
-// function restart(){   
-//     window.location.reload();
-// } 
+} )
+  
+let alarmSound = document.getElementById("myAlert"); 
+let speaker = document.getElementById("speaker");
+let salient = document.getElementById("salient");
+let loud = document.getElementById("loud");
+function playAudio() { 
+  alarmSound.play();
+  loud.style.display = "block"
+  salient.style.display = "none"
+} 
+function pauseAudio() { 
+  alarmSound.pause();
+  salient.style.display = "block"
+  loud.style.display = "none" 
+}
+speaker.addEventListener('click', function(){
+  let audioVolume = alarmSound.volume
+  if(audioVolume === 1){
+    console.log("change speaker to salient")
+    alarmSound.volume = 0
+    salient.style.display = "block"
+    loud.style.display = "none"
+  } else {
+    console.log("change speaker to volume up")
+    alarmSound.volume = 1
+    loud.style.display = "block"
+    salient.style.display = "none"
+  }
+})
+stopAlarm.addEventListener('click', () => {
+      pauseAudio()
+})
+alarmSound.addEventListener('ended', function(){
+  if(!alarmTime.value == ""){
+    setTimeout(function (){ playAudio()}, 5000)
+      alarmSound.volume = 1
+    // let audioVolume = alarmSound.volume
+    console.log("i am still playing")
+  }else{
+   soundAlert.style.display = "none"
+  }
+})

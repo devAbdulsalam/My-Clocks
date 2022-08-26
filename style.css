@@ -111,9 +111,9 @@ h3{
     color: white;
 }
 #timeFormat{
-    overflow: hidden;
     font-weight: bold;
     font-size: 25px;
+    padding: 5px 0;
     color: rgb(15, 83, 143);
 }
 #timeFormat option{
@@ -156,27 +156,50 @@ h3{
 
 
 /* aLARM cLOCK */
-.alarmClock .clockBox{
-    /* flex-direction: row; */
-    /* gap: 20px; */
-}
-#alarmtime {
+#alarmTime {
     margin: auto 0;
-    font-size: 40px;
-    /* font-weight: ; */
+    font-size:30px;
     letter-spacing: 0.1rem;
 }
-.selectAm_Pm h3{
+#alarmCounter {
+    margin: auto 0;
+    font-size: 45px;
+}
+.alarmClock h3{
     padding: 5px;
-    margin: 5px;
+    margin: 2px;
+}
+.soundAlert{
+    display: none
+}
+.message{
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+}
+.speaker{
+    padding: 5px;
+    cursor: pointer;
+}
+.speakerIcon{
+    /* font-size: 40px; */
+    animation: example 3s ease-in-out 1s infinite alternate;
 }
 
+@keyframes example {
+    0% {color: blue;}
+    25% {color: azure;}
+    35% {color: rgb(170, 170, 231)}
+    50% {color: blue; font-size: 30px;}
+    70% {color: azure;}
+    90% {color: rgb(170, 170, 231)}
+    100% {color: blue;}
+}
 /* my trademark */
 #iamadev {
-    /* position: absolute; */
     cursor: pointer;
     width: 100%;
-    margin: 10px auto 0;
+    margin: 30px auto 0;
     font-weight: bolder;
     text-align: center;
     bottom: 5%;
