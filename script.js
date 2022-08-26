@@ -175,7 +175,7 @@ let control = () => {
   h = checkTime(h);
   stopTime.innerHTML =  h + "h:" + m + "m:" + s + "s";   
   // counting()
-  let startTimer = setTimeout(control, 500);
+  let startTimer = setTimeout(control, 1000);
 
   // stop timmer
   function stopTimer(){
