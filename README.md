@@ -1,14 +1,11 @@
-# Analog-Clock
+# Clocks
 
-This was made using HTML canvas and JavaScript.
+These are differnt types of clocks, it includes an analog, digital, stop-watch and an alarm clock.
+They are made using HTML canvas, CSS and JavaScript.
 
 ## Authors
 
 - [@devAbdulsalam](https://github.com/devAbdulsalam)
-
-## 🚀 About Me
-
-I'm a front-end developer.I am very good with CSS, Sass, Tailwind-Css and vanilla JavaScript and currently Learning React, I'm hoping to land my first remote job very soon.
 
 ## Features
 
@@ -22,6 +19,14 @@ I'm a front-end developer.I am very good with CSS, Sass, Tailwind-Css and vanill
 
 ![App Screenshot](/myclocks.png)
 
+## 🚀 About Me
+
+I'm a front-end developer.I am very good with CSS, Sass, Tailwind-Css and vanilla JavaScript and currently Learning React, I'm hoping to land my first remote job very soon.
+
+## 🛠 Skills
+
+HTML, CSS, bootstrap, tailwind, Javascript and learning React...
+
 ## Appendix
 
 I'm hoping to work with pros in Javascript/React.
@@ -29,10 +34,6 @@ I'm hoping to work with pros in Javascript/React.
 ## Feedback
 
 If you have any feedback, please reach out to us at devAbdulsalam74@gmail.com
-
-## 🛠 Skills
-
-HTML, CSS, bootstrap, tailwind, Javascript and learning React...
 
 ## Support
 
