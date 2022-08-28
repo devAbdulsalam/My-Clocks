@@ -1,6 +1,6 @@
 # Clocks
 
-These are differnt types of clocks, it includes an analog, digital, stop-watch and an alarm clock.
+These are different types of clocks, it includes an analog, digital, stop-watch and an alarm clock.
 They are made using HTML canvas, CSS and JavaScript.
 
 ## Authors
