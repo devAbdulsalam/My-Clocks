@@ -21,15 +21,15 @@ They are made using HTML canvas, CSS and JavaScript.
 
 ## 🚀 About Me
 
-I'm a front-end developer.I am very good with CSS, Sass, Tailwind-Css and vanilla JavaScript and currently Learning React, I'm hoping to land my first remote job very soon.
+I'm a front-end developer.I am very good with CSS, Sass, Tailwind-CSS and vanilla JavaScript and currently Learning React, I'm hoping to land my first remote job very soon.
 
 ## 🛠 Skills
 
-HTML, CSS, bootstrap, tailwind, Javascript and learning React...
+HTML, CSS, Bootstrap, Tailwind, Javascript and learning React...
 
 ## Appendix
 
-I'm hoping to work with pros in Javascript/React.
+I'm hoping to work with proffesionals in Javascript/React.
 
 ## Feedback
 
